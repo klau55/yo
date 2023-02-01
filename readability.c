@@ -10,16 +10,16 @@ int count_sentences(string text);
 
 int main(void)
 {
-string text = get_string ("Text: ");
+    string text = get_string("Text: ");
 
-double L = count_letters(text)/(float)count_words(text)*100;
-double S = count_sentences(text)/(float)count_words(text)*100;
+    double L = count_letters(text) / (float)count_words(text) * 100;
+    double S = count_sentences(text) / (float)count_words(text) * 100;
 
-int index = round(0.0588 * L - 0.296 * S - 15.8);
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
 
     if (index < 1)
     {
-        printf ("Before Grade 1\n");
+        printf("Before Grade 1\n");
     }
     else if (index >= 16)
     {
@@ -27,14 +27,14 @@ int index = round(0.0588 * L - 0.296 * S - 15.8);
     }
     else
     {
-    printf ("Grade %i\n", index);
+        printf("Grade %i\n", index);
     }
-    //printf ("%i letters\n%i words\n%i sentences\n", count_letters(text), count_words(text), count_sentences(text));
+
 }
 
 int count_letters(string text)
 {
-int letters = 0;
+    int letters = 0;
 
     for (int i = 0; i < strlen(text); i++)
     {
@@ -75,6 +75,3 @@ int count_sentences(string text)
     }
     return sentences;
 }
-
-
-
